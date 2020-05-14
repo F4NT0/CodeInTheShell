@@ -1,0 +1,19 @@
+------------------------------------------
+	HOW TO CONFIGURE YOUR I3
+------------------------------------------
+
+-> CONFIGURATION FROM MANJARO I3
+-> Manjaro i3 come with already the basic Configuration
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+MAKE YOUR WINDOW TRANSPARENT WITH COMPTON
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+-> Compton is a program to make the Shell Become transparent
+-> INSTALLATION =  sudo pacman -S compton
+-> REMOVING = sudo pacman -R compton
+-> EXECUTION 
+	-> exec --no-startup-id compton
+   	-> Restart i3 = mod4 + SHIFT + R
+-> 
+
