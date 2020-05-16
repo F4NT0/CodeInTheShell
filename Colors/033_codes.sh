@@ -1,11 +1,21 @@
 #!/bin/bash
 
-#######################################
-# TESTE DE SAIDA DE CORES PELO TERMINAL
-#######################################
+#------------------------
+# 033 COLORS TO SHELL CLI
+#------------------------
 
-for((i = 30 ; i < 50 ; i++));do
-	echo -e "\033[01;${i}m COR VALOR ${i}"
+
+# Regular Colors
+for((i = 30 ; i < 37 ; i++));do
+	echo -e "\033[0;${i}m Regular Color ${i}"
 done
+
+# High Intensity Color
+for((i = 90 ; i < 97 ; i++));do
+	echo -e "\033[0;${i}m High Intensity ${i}"
+done
+
+# Color OFF
+# \033[0m
 
 
