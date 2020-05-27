@@ -1,11 +1,16 @@
 #!/bin/bash
 
 #########################
-# TESTE DOS COMANDOS TPUT
+# TEST TPUT COMMANDS
 #########################
 
-echo "Teste de Cores pelo tput"
+echo "setaf test = Foreground Colors"
 
-for((i = 0 ; i < 15 ; i++));do
+for((i = 0 ; i < 9 ; i++));do
 	echo "$(tput setaf ${i}) TPUT SETAF ${i}"
 done
+
+for((i = 0 ; i < 9 ; i++));do
+	echo "$(tput setab ${i}) TPUT SETAB ${i}"
+done
+
