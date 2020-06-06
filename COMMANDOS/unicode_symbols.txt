@@ -2,21 +2,21 @@
 ׀ CÓDIGO DE SÍMBOLOS DE UNICODE PARA TUI׀
 ╰───────────────────────────────────────╯
 
-┌─────────────────────────────────────────────────────────────────┐
-׀ ➤ VIM                                                           ׀
-׀                                                                 ׀
-׀ 1) Selecione o modo de Inserção (tecla I)                       ׀
-׀ 2) Selecione o modo Unicode: Ctrl + V + U                       ׀
-׀ 3) Digite o comando do Símbolo e clique em Enter                ׀
-׀                                                                 ׀
-׀ ➤ COPIANDO O SIMBOLO                                            ׀
-׀                                                                 ׀
-׀ 1) Saia do modo de Inserção e entre no modo de Visual(tecla V)  ׀
-׀ 2) Selecione o Simbolo que deseja usando as setas               ׀
-׀ 3) Copie com o Comando Y + Y                                    ׀
-׀ 4) Vá até a área desejada e clique em P para colar              ׀
-׀ 5) Cuidado com qualquer texto embaixo senão será jogado longe   ׀
-└─────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+׀ ➤ VIM                                                            ׀
+׀                                                                  ׀
+׀  1) Selecione o modo de Inserção (tecla I)                       ׀
+׀  2) Selecione o modo Unicode: Ctrl + V + U                       ׀
+׀  3) Digite o comando do Símbolo e clique em Enter                ׀
+׀                                                                  ׀
+׀ ➤ COPIANDO O SIMBOLO                                             ׀
+׀                                                                  ׀
+׀  1) Saia do modo de Inserção e entre no modo de Visual(tecla V)  ׀
+׀  2) Selecione o Simbolo que deseja usando as setas               ׀
+׀  3) Copie com o Comando Y + Y                                    ׀
+׀  4) Vá até a área desejada e clique em P para colar              ׀
+׀  5) Cuidado com qualquer texto embaixo senão será jogado longe   ׀
+└──────────────────────────────────────────────────────────────────┘
 
 
  QUADRADO DUPLO E TABELA
