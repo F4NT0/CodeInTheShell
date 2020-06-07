@@ -30,17 +30,6 @@ read -r tittles
 
 value=${#tittles}
 sum=$(( $value + 2 ))
-#echo "${#tittles}"
-#echo "${sum}"
-
-a=0
-printf "╔" >> $filename
-while [ $a -lt $sum ]
-do
-	printf "═" >> $filename
-	a=$((a+1))
-done
-printf "╗" >> $filename
 
 # SET THE INFO FOR THE LINES
 set -- $tittles #Split all tittles in numbers
@@ -49,3 +38,23 @@ for i in "${tittle[@]}"; do
 			printf "║ $i " >> $filename
 done
 
+# INSERT INFORMATIONS
+loop=true
+while :
+do
+	 printf "\n" >> $filename		
+	 printf "Insert Information for the Line with Space: "
+	 read -r infos
+	 set -- $infos
+	 read -ra info <<< "$infos"
+	 for i in "${info[@]}"; do
+					 printf "║ $i " >> $filename
+	 done
+	 printf "Insert new Line? [y/n] : "
+	 read -r booleanEntry
+	 if [[ "$booleanEntry" == "y" || "$booleanEntry" == "Y" ]]; then
+					continue
+	 elif [[ "$booleanEntry" == "n" || "$booleanEntry" == "N" ]]; then
+					break
+	 fi
+done
