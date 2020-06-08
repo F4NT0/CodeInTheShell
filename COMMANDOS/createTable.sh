@@ -9,17 +9,10 @@ echo
 # CREATE AN EMPTY FILE
 #---------------------
 
-#printf "Digit the Name of the File and Extension ❱  "
-#read -r filename
-#touch ${filename}
-#echo "[ $(tput setaf 2) OK $(tput sgr0) ] ${filename} CREATED"
-
-#--------------------------
-# GET THE NUMBER OF COLUMNS
-#--------------------------
-
-#printf "Digit the Number of Columns ❱  "
-#read -r columnNumbers
+printf "Digit the Name of the File and Extension ❱  "
+read -r filename
+touch ${filename}
+echo "[ $(tput setaf 2) OK $(tput sgr0) ] ${filename} CREATED"
 
 #-------------------------
 # TITTLES FROM THE COLUMNS
@@ -34,83 +27,86 @@ set -- $tittles
 read -ra tittle <<< "$tittles"
 #echo "${tittle[0]}" #read the first value inserted
 #echo "${#tittle[0]}"#read the number of the value
-printf "╔"
+printf "╔" >> $filename
 i=0
 
 for p in "${tittle[@]}"; do
 				i=0
 				while [[ $i -lt ${#p}+2 ]]
 				do
-								printf "═"
+								printf "═" >> $filename
 								i=$(( i+1 ))
 				done
-				printf "╦"
+				printf "╦" >> $filename
 done
-printf "╗"
+printf "╗" >> $filename
 
 # INSERT THE TITTLE
-printf "\n"
-printf "║"
+printf "\n" >> $filename
+printf "║" >> $filename
 for p in "${tittle[@]}"; do
-				printf " $p ║"
+				printf " $p ║" >> $filename
 done
-printf "║\n"
+printf "║\n" >> $filename
 
 # CLOSING TITTLE
-printf "╚"
+printf "╠" >> $filename
 for p in "${tittle[@]}"; do
 				i=0
 				while [[ $i -lt ${#p}+2 ]]
 				do
-								printf "═"
+								printf "═" >> $filename
 								i=$(( i+1 ))
 				done
-				printf "╩"
+				printf "╬" >> $filename
 done
-printf "╝\n"
+printf "╣\n" >> $filename
 
-#max=${#tittle[0]}+2
-#while [[ $i -lt max ]] 
-#do
-#				printf "═"
-#				i=$(( i+1 ))
-#done
-#printf "╦"
-#printf "\n"
-#printf "║ ${tittle[0]} ║\n"
-#printf "╠"
-#j=0
-#while [[ $j -lt max ]]
-#do
-#				printf "═"
-#				j=$(( j+1 ))
-#done
-#printf "╬\n"
-
-# SET THE INFO FOR THE LINES
-#set -- $tittles #Split all tittles in numbers
-#read -ra tittle <<< "$tittles"
-#for i in "${tittle[@]}"; do	
-#			printf "║ $i " >> $filename
-#done
-
+#--------------------
 # INSERT INFORMATIONS
-#loop=true
-#while :
-#do
-#	 printf "\n" >> $filename		
-#	 printf "Insert Information for the Line with Space: "
-#	 read -r infos
-#	 set -- $infos
-#	 read -ra info <<< "$infos"
-#	 for i in "${info[@]}"; do
-#					 printf "║ $i " >> $filename
-#	 done
-#	 printf "Insert new Line? [y/n] : "
-#	 read -r booleanEntry
-#	 if [[ "$booleanEntry" == "y" || "$booleanEntry" == "Y" ]]; then
-#					continue
-#	 elif [[ "$booleanEntry" == "n" || "$booleanEntry" == "N" ]]; then
-#					break
-#	 fi
-#done
+#--------------------
+
+loop=true
+while :
+do	
+ 	 printf "Insert Information for the Line with Space: "
+	 read -r infos
+	 set -- $infos
+	 read -ra info <<< "$infos"
+   printf "║" >> $filename
+	 for p in "${info[@]}"; do
+					 printf " $p ║" >> $filename
+   done
+	 printf "║\n" >> $filename
+   printf "╠" >> $filename
+	 for p in "${info[@]}"; do
+					 i=0
+					 while [[ $i -lt ${#p}+2 ]]
+					 do
+									 printf "═" >> $filename
+									 i=$(( i+1 ))
+					 done
+					 printf "╬" >> $filename
+	 done
+	 printf "╣\n" >> $filename
+ 
+   # TEST TO INSERT NEW LINE
+	 printf "Insert new Line? [y/n] : "
+	 read -r booleanEntry
+	 if [[ "$booleanEntry" == "y" || "$booleanEntry" == "Y" ]]; then
+					continue
+	 elif [[ "$booleanEntry" == "n" || "$booleanEntry" == "N" ]]; then
+					printf "╚" >> $filename
+					for p in "${info[@]}"; do
+									i=0
+									while [[ $i -lt ${#p}+2 ]]
+									do
+													printf "═" >> $filename
+													i=$(( i+1 ))
+									done
+									printf "╩" >> $filename
+					done
+					printf "╝\n\n" >> $filename
+				  break
+   fi
+done
