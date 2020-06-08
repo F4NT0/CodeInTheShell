@@ -14,6 +14,25 @@ read -r filename
 touch ${filename}
 echo "[ $(tput setaf 2) OK $(tput sgr0) ] ${filename} CREATED"
 
+#---------------------------
+# FIGLET TITTLE FOR THE FILE
+#---------------------------
+
+printf "INSERT THE TITTLE FOR THE FILE ❱ "
+read -r figletTittle
+figlet $figletTittle >> $filename
+printf "\n" >> $filename
+echo "[ $(tput setaf 2) OK $(tput sgr0) ] FIGLET TITTLE CREATED"
+
+#-------------------------
+# INSERT INFORMATION ABOUT
+#-------------------------
+
+printf "INSERT THE INFO ABOUT THE FILE ❱ "
+read -r infoFile
+printf "$infoFile" >> $filename
+printf "\n" >> $filename
+
 #-------------------------
 # TITTLES FROM THE COLUMNS
 #-------------------------
