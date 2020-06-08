@@ -9,7 +9,7 @@ echo
 # CREATE AN EMPTY FILE
 #---------------------
 
-printf "Digit the Name of the File and Extension ❱  "
+printf "DIGIT THE NAME OF THE FILE AND EXTENSION ❱  "
 read -r filename
 touch ${filename}
 echo "[ $(tput setaf 2) OK $(tput sgr0) ] ${filename} CREATED"
@@ -18,9 +18,9 @@ echo "[ $(tput setaf 2) OK $(tput sgr0) ] ${filename} CREATED"
 # TITTLES FROM THE COLUMNS
 #-------------------------
 
-printf "Digit the Tittles of Columns with a Space: "
+printf "DIGIT THE TITTLES SEPARATED WITH , ❱ "
 read -r tittles
-
+IFS=',' #defining the delimiter
 
 # MADE THE BEGGINING
 set -- $tittles
@@ -62,6 +62,8 @@ for p in "${tittle[@]}"; do
 done
 printf "╣\n" >> $filename
 
+echo "[ $(tput setaf 2) OK $(tput sgr0) ] THE TITTLES INSERTED!"
+
 #--------------------
 # INSERT INFORMATIONS
 #--------------------
@@ -69,7 +71,7 @@ printf "╣\n" >> $filename
 loop=true
 while :
 do	
- 	 printf "Insert Information for the Line with Space: "
+ 	 printf "INSERT INFORMATION FOR THE LINE SEPARATED WITH , ❱ "
 	 read -r infos
 	 set -- $infos
 	 read -ra info <<< "$infos"
@@ -90,8 +92,10 @@ do
 	 done
 	 printf "╣\n" >> $filename
  
+	 echo "[ $(tput setaf 2) OK $(tput sgr0) ] LINE INSERTED!"
+
    # TEST TO INSERT NEW LINE
-	 printf "Insert new Line? [y/n] : "
+	 printf "INSERT NEW LINE? [y/n] ❱ "
 	 read -r booleanEntry
 	 if [[ "$booleanEntry" == "y" || "$booleanEntry" == "Y" ]]; then
 					continue
