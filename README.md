@@ -1,2 +1,5 @@
-# CodeInTheShell
-:scroll: Repository with infos to read in terminal about technologies
+# Code in the Shell
+
+* Repository to Keep my Scripts and Information to use in Linux CLI Shells
+
+
