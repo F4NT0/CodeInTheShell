@@ -18,6 +18,8 @@
 ׀  ❱ Cuidado com qualquer texto embaixo senão será jogado longe    ׀
 └──────────────────────────────────────────────────────────────────┘
 
+VSCODE = Selecione Ctrl + Shift + U até aparecer um u sublinhado, depois coloque o comando e clique em ENTER
+
 
  QUADRADO DUPLO E TABELA
 
